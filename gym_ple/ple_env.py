@@ -32,7 +32,7 @@ class PLEEnv(gym.Env):
         return state, reward, terminal, {}
 
     def _get_image(self):
-        image_rotated = np.fliplr(np.rot90(self.game_state.getScreenRGB(),3)) # Hack to fix the rotated image returned by ple
+        image_rotated = np.fliplr(self.game_state.getScreenRGB())  # TODO: stop Hack to fix the rotated image returned by ple
         return image_rotated
 
     @property
